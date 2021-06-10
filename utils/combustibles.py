@@ -1,8 +1,7 @@
-from typing import List
 
 
 class Combustible:
-    def __init__(self, name: str, properties: List) -> None:
+    def __init__(self, name: str, properties: list) -> None:
         self.name = name.upper()
         self.KC, self.KH , self.KO, self.KN, self.KS, self.KM, self.Kash = [round(Ki / 100, 4) for Ki in properties]
         return None
@@ -19,8 +18,14 @@ class Combustible:
     Ashes..............{round(self.Kash * 100, 2)}%
     
 It requires {self.get_air_steo} kg air/kg fuel."""
+
     @property
-    def get_air_steo(self) -> float:
+    def air_steo(self) -> float:
         return round((2.9978 * self.KH - 0.3747 * self.KO + 0.3747 * self.KS + self.KC) * 11.445, 3)
+    
+    @property
+    def tot_steo(self) -> float:
+        return round((self.air_steo + 1 - self.Kash), 4)
+    
 
 
