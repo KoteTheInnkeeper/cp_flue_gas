@@ -8,7 +8,7 @@ class Approximations:
 
     @classmethod
     def c_cp(cls, T: float) -> float:
-        return round(float(0.5657 - 0.00000 * T - 10465 / (T**2)), 4) 
+        return round(float(0.5657 - 0.00000668 * T - 10465 / (T**2)), 4)
     
     @classmethod
     def c_pa(cls, T: float) -> float:
