@@ -1,6 +1,6 @@
-from typing import Union, List, Tuple
+from typing import List
 from lib.functions import Approximations as ap
-from utils.combustibles import Combustible
+from lib.combustibles import Combustible
 
 
 class Coefficients:
@@ -96,3 +96,4 @@ f_A = {self.f_A}
     def get_cp_flue_gas(self):
         cp_gh = self.cp_CO2/(self.a_C + self.b_N + self.c_H + self.d_S) * self.combustible.tot_steo / self.flue_gas + self.f_A
         return round(cp_gh, 4)
+

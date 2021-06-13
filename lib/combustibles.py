@@ -1,5 +1,3 @@
-
-
 class Combustible:
     def __init__(self, name: str, properties: list) -> None:
         self.name = name.upper()
